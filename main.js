@@ -125,18 +125,22 @@ console.log(reverse("Hello"))
 
 ////===============================================================
 
-// the for loop works and does what it's supposed to but im still having an disconnect with the way it would work in function form...
+// the for loop works and does what it's supposed to but im still having an disconnect with the way it would work in function form(i cant figure out what to write in the parameter)... so I added a prompt to the variable I use in the loop
+
+const prompt = require('prompt-sync')({sigint: true});
 
 let vowels = ""
-let searchVowels = "It feels good to solve a problem, what about you?"
+let searchVowels = prompt("> ")
+let lower = searchVowels.toLowerCase()
 
 function onlyVowels(){
-for (i = 0; i < searchVowels.length; i++) {
-   if(searchVowels[i] === "a" || searchVowels[i] === "e" || searchVowels[i] === "i" || searchVowels[i] === "o" || searchVowels[i] === "u"){
-       vowels = vowels + searchVowels[i]
-   }
-}
+
+    for(i = 0; i < lower.length; i++) {
+        if(lower[i] === "a" || lower[i] === "e" || lower[i] === "i" || lower[i] === "o" || lower[i] === "u"){
+        vowels = vowels + lower[i]
+        }
+    }
 return vowels
 }
 
-console.log(onlyVowels())
+console.log(onlyVowels(lower))
